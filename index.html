@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- Template by Quackit.com -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Custom script -->
+    <script src="script.js"></script>
+    <script src="colouriserScript.js"></script>
+
+    <title>Starbound Text Colouriser</title>
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <!-- Navigation -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <!-- Logo and responsive toggle -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://github.com/Silverfeelin/">
+              <i class="fa fa-github"></i>
+              <span>Silverfeelin</span>
+            </a>
+          </div>
+
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+              <!-- li class="active" -->
+              <li><a href="https://github.com/Silverfeelin/Starbound-TextColouriser">View project on GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+          
+      <div id="featureBackground">
+        <div id="feature" class="jumbotron feature">
+          <div class="container">
+            <h1><i class="fa fa-paint-brush"></i> Text Colouriser</h1>
+            <p>Put some flair in that text!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="container">
+
+        <!-- Input -->
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="content-header">Text
+            </h2>
+            <textarea id="input" class="textInput form-control" wrap="soft"></textarea>
+          </div>
+        </div>
+
+        <!-- Options -->
+        <div class="row">
+          <div class="col-sm-6">
+            <h2 class="content-header">Options
+            </h2>
+            <label for="colourMode">Colour Mode:</label>
+            <select class="form-control" id="colourMode" onchange="Colouriser.modeChanged()">
+              <option value="solid">Solid</option>
+              <option value="gradient">Gradient</option>
+              <option value="random">Random</option>
+            </select>
+          </div>
+
+          <div class="col-sm-6">
+            <h2 class="content-header">Colours</h2>
+            <div id="colourOptions">
+              <div id="colourOptionSolid" class="col-sm-12">
+                <label for="solidColour">Colour: </label><br>
+                <input type='text' class="colourControls" id="solidColour" />
+              </div>
+              <div id="colourOptionGradient" class="col-sm-12">
+                <label for="fromColour">From colour:</label> 
+                <input type='text' class="colourControls" id="fromColour" /><br/>
+
+                <label for="toColour">To colour:</label> 
+                <input type='text' class="colourControls" id="toColour" />
+              </div>
+              <div id="colourOptionRandom" class="col-sm-12">
+                Colours will be randomized.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Output -->
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="content-header">Output
+            </h2>
+            <p id="outputHTML" style="word-wrap: break-word;"></p>
+            <textarea id="output" class="form-control textInput" wrap="soft"></textarea>
+            <br/>
+            <button class="btn btn-info" onclick="Colouriser.updateOutput()">Generate</button> <button class="btn btn-info btnCopy" data-clipboard-action="copy" data-clipboard-target="#output">Copy to Clipboard</button> Copying to clipboard may not work on all browsers. Please use Ctrl+C instead.
+          </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Image -->
+        <div class="row">
+          <div class="col-lg-12">
+            <br/>
+            <image class="img-responsive img-rounded center-block" src="imgs/banner.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Clipboard.js Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Spectrum Color Picker -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css' />
+
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    <link href="custom.css" rel="stylesheet">
+  </body>
+</html>
